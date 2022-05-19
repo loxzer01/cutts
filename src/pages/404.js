@@ -1,5 +1,5 @@
 import Header from "../components/Header"
-export default ()=>{
+const Error = ()=>{
     return (
         <>
         <Header title="Cutts - 404"/>
@@ -22,3 +22,4 @@ export default ()=>{
         </>
     )    
 }
+export default Error;
