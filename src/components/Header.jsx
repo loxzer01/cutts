@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import header from "../styles/Header.module.css"
 import Acortador from "./Acortador"
-export default ({title})=>{
+const Header = ({title})=>{
     return (
         <>
             <Head>
@@ -19,3 +19,4 @@ export default ({title})=>{
         </>
     )
 }
+export default Header

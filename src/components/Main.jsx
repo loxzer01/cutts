@@ -1,6 +1,6 @@
 import main from "../styles/Main.module.css"
 
-export default () =>{
+const Main = () =>{
     const acotar = ()   =>{
     }
     return (
@@ -14,3 +14,4 @@ export default () =>{
         </>
     )
 }
+export default Main

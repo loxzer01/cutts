@@ -1,5 +1,5 @@
 import acortador from "../styles/Acortador.module.css"
-export default () => {
+const Acortador = () => {
     <div className={acortador.acotar}>
         <div className={acortador.acotar_contenedor}>
             <h2>Acorta tu Link</h2>
@@ -12,3 +12,5 @@ export default () => {
         </div>
     </div>
 }
+
+export default Acortador
