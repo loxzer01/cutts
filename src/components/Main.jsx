@@ -10,7 +10,12 @@ const Main = () =>{
                 <p>Acorta tus link y genera ingresos por visitas en ellos</p>
                 <button onClick={acotar}>Acortar link</button>
             </main>
-            
+            <section className={main.section}>
+                <h2>Como ganar con Cutts.ga</h2>
+                <p>
+                    
+                </p>
+            </section>
         </>
     )
 }

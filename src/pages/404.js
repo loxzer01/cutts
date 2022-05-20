@@ -6,6 +6,8 @@ const Error = ()=>{
         <main className="main">
             <h1>Error: 404</h1>
             <p>En esta direccion no se encuentra ninguna informacion</p>
+            <script src="/ads_onclick.js"></script>
+            <script async="async" data-cfasync="false" src="//upgulpinon.com/1?z=5100672"></script>
         </main>
         <style jsx>
             {`
