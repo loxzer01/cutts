@@ -1,4 +1,4 @@
-export default function Ads(){
+export default function Ads2(){
 
     return (
         <>
