@@ -35,7 +35,7 @@ export default function InfoAds({isAds}) {
             </div>
             <script src="/ads_onclick.js"></script>
             <script src="/ads_center.js"></script>
-            <script async="async" data-cfasync="false" src="//upgulpinon.com/1?z=5100672"></script>
+            <script data-cfasync="false" src="//upgulpinon.com/1?z=5100672"></script>
         <style jsx>{`
             .infoAds{
                 max-width: 800px;
