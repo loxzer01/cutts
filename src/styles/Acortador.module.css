@@ -1,0 +1,116 @@
+.acotar{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.acotar_contenedor,
+.acotar_contenedor form,
+.acotar_contenedor .ready{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.acotar_contenedor{
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    padding: 2rem;
+    background-color: var(--color-1-1);
+    border-radius: 20px;
+}
+.acotar_contenedor span {
+    font-weight: bold;
+    color: #141414;
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+.acotar_contenedor form {
+    width: 100%;
+    height: 100%;
+    gap: 8px;
+    align-items: flex-start;
+
+}
+.acotar_contenedor form label{
+    padding: 4px;
+    font-weight: bold;
+    color: #141414;
+}
+.acotar_contenedor form input, .acotar_contenedor form button{
+    width: 100%;
+    padding: 1rem 2rem;
+    border: 2px solid #141414;
+    border-radius: 12px;
+    background-color: var(--white);
+    color: #141414;
+    outline: none;
+}
+.acotar_contenedor form button{
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+.ready h2{
+    font-weight: bold;
+    color: #141414;
+    font-size: 32px;
+}
+.ready a{
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--color-2);
+
+    cursor: pointer;
+}
+.ready{
+
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+}
+.ready span {
+    position: relative;
+    right: 0;
+    top: 0;
+    padding: 1rem 2rem;
+    background: var(--color-2-1);
+    border-radius: 12px;
+}
+/* invisible  */
+.ready input{
+    position: fixed;
+    top: -100px;
+    width: 10px;
+    height: 10px;
+    border: none;
+    outline: none;
+}
+.peticion {
+    position: absolute;
+    background-color: var(--color-1);
+    color: #141414;
+    border: 2px solid #141414;
+    width: 200px;
+    height: 100px;
+    display: grid;
+    place-content: center;
+    top: 10px;
+    right: 10px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}

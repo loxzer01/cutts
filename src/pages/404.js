@@ -1,3 +1,4 @@
+import Ads3 from "../components/Ads3";
 import Header from "../components/Header"
 const Error = ()=>{
     return (
@@ -6,9 +7,7 @@ const Error = ()=>{
         <main className="main">
             <h1>Error: 404</h1>
             <p>En esta direccion no se encuentra ninguna informacion</p>
-            <script src="/ads_onclick.js"></script>
-            <script src="/ads_center.js"></script>
-            <script src="//upgulpinon.com/1?z=5100672"></script>
+            <Ads3/>
         </main>
         <style jsx>
             {`

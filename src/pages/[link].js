@@ -1,22 +1,22 @@
-import { useEffect, useRef, useState } from "react"
+import {  useState } from "react"
 import Captcha from "../components/Captcha";
 import Header from "../components/Header";
 import InfoAds from "../components/InfoAds";
 
 export default function LinkAds({db}){
     const [isAds, setIsAds] = useState(false)
-    const adsRef = useRef() 
-    useEffect(()=>{
-        setIsAds(adsRef.current.offsetHeight === 0)
-    },[])
+    const acotar = ()   =>{
+        setIsAds(true);
+    }
+    function exit(){
+        setIsAds(false);
+    }
+
     return (
         <>
-            <div className="adsbox" style={{position:"fixed"}} ref={adsRef}>
-                &nbsp;
-            </div>
             <Header/>
-            <InfoAds isAds={isAds}/>
-            <Captcha db={db} isAds={isAds}/>
+            <InfoAds isAds={isAds} acotar={acotar} exit={exit}/>
+            <Captcha db={db}/>
         </>
     )
 }

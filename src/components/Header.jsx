@@ -2,8 +2,14 @@ import Head from "next/head"
 import Image from "next/image"
 import header from "../styles/Header.module.css"
 import Acortador from "./Acortador"
+import { useState } from "react";
 const Header = ({title})=>{
+    const [isAcotar, setIsAcotar] = useState(false);
     const acotar = ()   =>{
+        setIsAcotar(true);
+    }
+    function exit(){
+        setIsAcotar(false);
     }
     return (
         <>
@@ -13,11 +19,12 @@ const Header = ({title})=>{
                 <link rel="icon" href="/favicon.png" />
             </Head>
             <header className={header.header}>
-                <Image src="/logo.svg" alt="logo" className={header.logo} width={180} height={100}/>
+                <a href="/"><Image src="/logo.svg" alt="logo" className={header.logo} width={180} height={100}/></a>
                 <button className={header.button} onClick={acotar}>Acorta tu link</button>
             </header>
-            <Acortador />
-            
+            {
+                isAcotar?<Acortador exit={exit}/>:null
+            }
         </>
     )
 }

@@ -1,10 +1,12 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState } from "react";
-export default function Captcha({db,isAds}){
+export default function Captcha({db}){
     const [verify , setVerify] = useState(false);
+    const [Db, setDb] = useState("");
     const captchaBtn = useRef()
     const continuar = () =>{
         if(verify){
+            localStorage.setItem(db, true);
             window.location.href = "/v/"+btoa(db);
         }else{
             window.location.reload();
@@ -12,15 +14,11 @@ export default function Captcha({db,isAds}){
     }
     const changeCaptcha = ()=>{
         captchaBtn.current.disabled = false;
-        localStorage.setItem(db, "true");
         setVerify(true);
     }
     return(
         <>
-            {
-                isAds?<div className="captcha isAds">
-                <p>Desactive el BlockAds para que funcione correctamente</p>
-            </div>:<div className="captcha">
+            <div className="captcha">
                 <div className="captcha_resolve">
                     <ReCAPTCHA 
                     sitekey="6LfmAAQgAAAAAN24JM82-OuVcaobSrdj7hONyQ7H"
@@ -31,7 +29,6 @@ export default function Captcha({db,isAds}){
                     verify?<button className="btn" onClick={continuar} ref={captchaBtn}>Continuar</button>:<button className="btn" onClick={continuar} disabled ref={captchaBtn}>Continuar</button>
                 }
             </div>
-            }
             <style jsx>{`
                 .captcha{ 
                     padding: 3rem;
@@ -42,20 +39,12 @@ export default function Captcha({db,isAds}){
                     background-color:var(--color-2);
                     flex-wrap: wrap;
                 }
-                .isAds{
-                    background-color: var(--color-1);
-                }
-                .isAds p{
-                    font-weight: 700;
-                    font-size: 20px;
-                    color: var(--black);
-                }
                 .btn{
-                    background-color: var(--color-2);
-                    color: var(--black);
+                    background-color: #777777;
+                    color: var(--white);
                     border: none;
                     padding: 1rem 2rem;
-                    font-size: 16px;
+                    font-size: 14px;
                     font-weight: 700;
                     border-radius: 12px;
                     cursor: pointer;
@@ -63,7 +52,7 @@ export default function Captcha({db,isAds}){
                 }
                 .btn:disabled{
                     cursor: not-allowed;
-                    filter: grayscale(60%);
+                    filter: brightness(0.6);
                 }
             `}</style>
         </>

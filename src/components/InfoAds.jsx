@@ -1,20 +1,26 @@
-
+import { useEffect,useRef, useState } from "react";
+import Acortador from "./Acortador";
 import Ads1 from "./Ads1";
 import Ads2 from "./Ads2";
-export default function InfoAds({isAds}) {
-    const acotar = () =>{
-
-    }
+import Ads3 from "./Ads3";
+export default function InfoAds({isAds,acotar,exit}) {
+    const [aparecer, setAparecer] = useState(false);
+    useEffect(()=>{
+        let ads2 = setTimeout(()=>{
+            setAparecer(!aparecer);
+        },5000);
+        return ()=>clearTimeout(ads2);
+    },[])
     return(
         <>
+            {
+                isAds?<Acortador exit={exit}/>:null
+            }
             <Ads1/>
             <div className="infoAds">
                 <div className="acuerdo2">
                     {
-                        isAds ? <p>AdBlocker activado desactivelo</p> : <>
-                            <Ads2/>
-                            <Ads2/>
-                        </>
+                        aparecer?<><Ads2/><Ads2/></>: <><Ads2/><Ads2/></>
                     }
                 </div>
                 <div className="text">
@@ -25,17 +31,14 @@ export default function InfoAds({isAds}) {
                     <h2>¿Cómo puedo omitir esta página e ir al enlace de destino?</h2>
                     <p>Verifique el reCaptcha a continuación y haga clic en Continuar, luego espere 10 segundos en la segunda página y haga clic en "Obtener enlace"</p>
                     <h2>¿Por qué no te creas un link acotado y empiezas a ganar dinero?</h2>
-                    <p onClick={acotar}>¡Haz clic aquí y crea tu link gratis!</p>
+                    <p onClick={acotar} className='span'>¡Haz clic aquí y crea tu link gratis!</p>
                 </div>
                 <div className="acuerdo2">
                     <Ads2/>
                     <Ads2/>
                 </div>
-                
+                <Ads3/>
             </div>
-            <script src="/ads_onclick.js"></script>
-            <script src="/ads_center.js"></script>
-            <script src="//upgulpinon.com/1?z=5100672"></script>
         <style jsx>{`
             .infoAds{
                 max-width: 800px;
@@ -58,6 +61,11 @@ export default function InfoAds({isAds}) {
             p{
               font-size: 16px;
               font-weight: 400;  
+            }
+            p.span {
+                font-weight: 700;
+                color: var(--color-2);
+                cursor: pointer;
             }
             .acuerdo2{
                 display: flex;

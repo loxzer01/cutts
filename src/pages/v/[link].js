@@ -1,25 +1,30 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import Header from "../../components/Header";
 import InfoAds from "../../components/InfoAds";
+import Verify from "../../components/Verify";
 
 export default function LinkAds({db}){
+    const [url,setUrl] = useState('');
     const [isAds, setIsAds] = useState(false)
-    const adsRef = useRef() 
+    const acotar = ()   =>{
+        setIsAds(true);
+    }
+    function exit(){
+        setIsAds(false);
+    }
     useEffect(()=>{
-        setIsAds(adsRef.current.offsetHeight === 0)
+        setUrl(window.atob(db));
     },[])
     return (
         <>
-            <div className="adsbox" style={{position:"fixed"}} ref={adsRef}>
-                &nbsp;
-            </div>
-            <Header title={"Cutts.ga - "+ db}/>
-            <InfoAds db={db} isAds={isAds}/>
+            <Header title={"Cutts.ga - "+ url}/>
+            <InfoAds isAds={isAds} acotar={acotar} exit={exit}/>
+            <Verify url={url}/>
         </>
     )
 }
-export function getServerSideProps(url){
-    const db = url.query.link;
+export function getServerSideProps(context){
+    const db = context.query.link;
     return{
         props:{
             db
