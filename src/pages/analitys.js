@@ -2,7 +2,6 @@ import Ads1 from "../components/Ads1"
 import Ads2 from "../components/Ads2"
 import Header from "../components/Header"
 import { useState, useRef } from "react"
-import Ads3 from "../components/Ads3"
 export default function Analytics(){
     const inputRef = useRef()
     const [views, setViews] = useState(0);

@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Verify({url}){
     const [timer, setTimer] = useState(10);

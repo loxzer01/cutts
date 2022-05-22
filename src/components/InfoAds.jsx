@@ -1,16 +1,10 @@
-import { useEffect,useRef, useState } from "react";
+
 import Acortador from "./Acortador";
 import Ads1 from "./Ads1";
 import Ads2 from "./Ads2";
 import Ads3 from "./Ads3";
 export default function InfoAds({isAds,acotar,exit}) {
-    const [aparecer, setAparecer] = useState(false);
-    useEffect(()=>{
-        let ads2 = setTimeout(()=>{
-            setAparecer(!aparecer);
-        },5000);
-        return ()=>clearTimeout(ads2);
-    },[])
+
     return(
         <>
             {
@@ -19,9 +13,7 @@ export default function InfoAds({isAds,acotar,exit}) {
             <Ads1/>
             <div className="infoAds">
                 <div className="acuerdo2">
-                    {
-                        aparecer?<><Ads2/><Ads2/></>: <><Ads2/><Ads2/></>
-                    }
+                    <Ads2/><Ads2/>
                 </div>
                 <div className="text">
                     <h2>¿Qué es Cutts?</h2>
@@ -29,7 +21,7 @@ export default function InfoAds({isAds,acotar,exit}) {
                     <h2>¿Por qué estoy en esta página?</h2>
                     <p>Es porque un usuario de Cutts está utilizando nuestro sitio web para acortar el enlace de su destino.</p>
                     <h2>¿Cómo puedo omitir esta página e ir al enlace de destino?</h2>
-                    <p>Verifique el reCaptcha a continuación y haga clic en Continuar, luego espere 10 segundos en la segunda página y haga clic en "Obtener enlace"</p>
+                    <p>Verifique el reCaptcha a continuación y haga clic en Continuar, luego espere 10 segundos en la segunda página y la página se refrecara con el link destino</p>
                     <h2>¿Por qué no te creas un link acotado y empiezas a ganar dinero?</h2>
                     <p onClick={acotar} className='span'>¡Haz clic aquí y crea tu link gratis!</p>
                 </div>
