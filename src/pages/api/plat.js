@@ -43,7 +43,7 @@ export default async function handler (req, res) {
         break
         case 'PUT':
         try {
-            let token = hashCode((String(parseInt(Date.now()/3000))+query.cutts)).toString(36)
+            let token = hashCode((String(parseInt(Date.now()/5000))+query.cutts)).toString(36)
             if(viewsIps?.time === undefined || viewsIps === null||viewsIps?.time <= parseInt(Date.now()/1000)){
                 let time = parseInt((Date.now()/1000)+86400)
                 if(viewsIps?.time <= parseInt(Date.now()/1000)){
