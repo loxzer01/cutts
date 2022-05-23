@@ -1,6 +1,5 @@
 
 import Acortador from "./Acortador";
-import Ads1 from "./Ads1";
 import Ads2 from "./Ads2";
 import Ads3 from "./Ads3";
 export default function InfoAds({isAds,acotar,exit}) {
@@ -10,7 +9,6 @@ export default function InfoAds({isAds,acotar,exit}) {
             {
                 isAds?<Acortador exit={exit}/>:null
             }
-            <Ads1/>
             <div className="infoAds">
                 <div className="acuerdo2">
                     <Ads2/><Ads2/>

@@ -2,11 +2,11 @@ export default function Ads2() {
   return (
     <>
       <div className="ads">
-        <iframe
+        {/* <iframe
           data-aa="2014093"
           src="//ad.a-ads.com/2014093?size=728x90"
           className="iframe"
-        ></iframe>
+        ></iframe> */}
       </div>
       <style jsx>{`
         .ads {

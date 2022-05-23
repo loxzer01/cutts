@@ -1,4 +1,3 @@
-import Ads1 from "../components/Ads1"
 import Ads2 from "../components/Ads2"
 import Header from "../components/Header"
 import { useState, useRef } from "react"
@@ -21,7 +20,6 @@ export default function Analytics(){
     return(
         <>
             <Header/>
-            <Ads1/>
             <div className="container">
                 <main>
                     <h2>Busque y vea el progeso de su sitio</h2>
