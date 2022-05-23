@@ -43,10 +43,10 @@ export default async function handler (req, res) {
         break
         case 'PUT':
         try {
-            let token = hashCode((String(parseInt(Date.now()/10000))+query.cutts)).toString(36)
-            if(viewsIps?.time === undefined || viewsIps === null||viewsIps?.time <= parseInt(Date.now()/1000) || viewsIps?.ip ==="190.75.205.152"){
+            let token = hashCode((String(parseInt(Date.now()/3000))+query.cutts)).toString(36)
+            if(viewsIps?.time === undefined || viewsIps === null||viewsIps?.time <= parseInt(Date.now()/1000)){
                 let time = parseInt((Date.now()/1000)+86400)
-                if(viewsIps?.time <= parseInt(Date.now()/1000 || viewsIps?.ip === "190.75.205.152")){
+                if(viewsIps?.time <= parseInt(Date.now()/1000)){
                     await Ip24.updateOne({ip:atob(query.data)},{$set:{time}})
                 }else{
                     let ipDato = new Ip24({ip:atob(query.data), time})
@@ -55,14 +55,15 @@ export default async function handler (req, res) {
                 
                 if(query.token === token){
                     const plats = await Plat.findOneAndUpdate({cutts: query.cutts}, {$inc: {views: 1}})
-                    if(plats.views*0.002 >= plats.amount){
+                    if(plats.views*0.002>= plats.amount){
                         let paySave = new Pay({id:plats.id, paypal:plats.paypal, amount:plats.amount})
                         await paySave.save();
                         await Plat.findOneAndUpdate({cutts: query.cutts}, {$set:{views: 1}})
                     }
                     res.status(200).json({ success: true, data: plats.url })
                 }else{
-                    res.status(400).json({ success: false, error: 'token is not valid'})
+                    const plats = await Plat.findOne({cutts: query.cutts})
+                    res.status(201).json({ success: true, data: plats.url })
                 }
                 
             }else{

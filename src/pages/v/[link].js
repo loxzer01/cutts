@@ -17,7 +17,7 @@ export default function LinkAds({db}){
     },[])
     return (
         <>
-            <Header title={"Cutts.ga - "+ url}/>
+            <Header title={"Cutts.ga - "+ url} url="//ad.a-ads.com/2014501?size=728x90"/>
             <InfoAds isAds={isAds} acotar={acotar} exit={exit}/>
             <Verify url={url}/>
         </>

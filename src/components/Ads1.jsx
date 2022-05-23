@@ -1,10 +1,10 @@
-export default function Ads2() {
+export default function Ads2({url}) {
   return (
     <>
       <div className="ads">
         <iframe
           data-aa="2014093"
-          src="//ad.a-ads.com/2014093?size=728x90"
+          src={url}
           className="iframe"
         ></iframe>
       </div>
@@ -28,3 +28,5 @@ export default function Ads2() {
     </>
   );
 }
+"//ad.a-ads.com/2014093?size=728x90"
+"//ad.a-ads.com/2014484?size=728x90"

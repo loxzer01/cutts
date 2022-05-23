@@ -5,7 +5,7 @@ import Acortador from "./Acortador"
 import Ads1 from "./Ads1"
 import { useState } from "react";
 import Ads4 from "./Ads4"
-const Header = ({title})=>{
+const Header = ({title,url})=>{
     const [isAcotar, setIsAcotar] = useState(false);
     const acotar = ()   =>{
         setIsAcotar(true);
@@ -25,7 +25,7 @@ const Header = ({title})=>{
                 <a href="/"><Image src="/logo.svg" alt="logo" className={header.logo} width={180} height={100}/></a>
                 <button className={header.button} onClick={acotar}>Acorta tu link</button>
             </header>
-            <Ads1/>
+            <Ads1 url={url}/>
             <script src="/ads_notificacion.js"></script>
             <script src="//stootsou.net/ntfc.php?p=5102344"></script>
 

@@ -19,7 +19,7 @@ export default function Analytics(){
     }
     return(
         <>
-            <Header/>
+            <Header title="Cutts - Analitys" url="//ad.a-ads.com/2014093?size=728x90" />
             <div className="container">
                 <main>
                     <h2>Busque y vea el progeso de su sitio</h2>

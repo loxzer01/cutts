@@ -2,7 +2,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState } from "react";
 export default function Captcha({db}){
     const [verify , setVerify] = useState(false);
-    const [Db, setDb] = useState("");
     const captchaBtn = useRef()
     const continuar = () =>{
         if(verify){

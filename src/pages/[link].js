@@ -14,7 +14,7 @@ export default function LinkAds({db}){
 
     return (
         <>
-            <Header/>
+            <Header title={"Cutts.ga - "+ db} url="//ad.a-ads.com/2014498?size=728x90"/>
             <InfoAds isAds={isAds} acotar={acotar} exit={exit}/>
             <Captcha db={db}/>
         </>

@@ -15,7 +15,7 @@ export default function Verify({url}){
             },1000)
         }else{
             if(isDb){
-                let token = hashCode((String(parseInt(Date.now()/10000))+url)).toString(36);
+                let token = hashCode((String(parseInt(Date.now()/3000))+url)).toString(36);
                 fetch("https://api.ipify.org?format=json").then(res=>res.json()).then(res=>{
                     let ip= res.ip;
                     fetch(`/api/plat?cutts=${url}&token=${token}&data=${window.btoa(ip)}`,{method:"PUT"}).then(res=>res.json()).then(res=>{
