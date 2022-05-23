@@ -3,10 +3,11 @@ export default function Ads2({url}) {
     <>
       <div className="ads">
         <iframe
-          data-aa="2014093"
+          data-aa={url.split("/")[2]}
           src={url}
           className="iframe"
         ></iframe>
+
       </div>
       <style jsx>{`
         .ads {
@@ -23,10 +24,19 @@ export default function Ads2({url}) {
           padding: 0;
           overflow: hidden;
           background-color: transparent;
+        .iframe {
+          width: 728px;
+          height: 90px;
+          border: 0px;
+          padding: 0;
+          overflow: hidden;
+          background-color: transparent;
+          position: fixed;
+          top: 0;
+          left: 110%;
+        }
         }
       `}</style>
     </>
   );
 }
-"//ad.a-ads.com/2014093?size=728x90"
-"//ad.a-ads.com/2014484?size=728x90"
