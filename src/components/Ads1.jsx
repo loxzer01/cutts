@@ -3,7 +3,7 @@ export default function Ads2({url}) {
     <>
       <div className="ads">
         <iframe
-          data-aa={url.split("/")[2]}
+          data-aa={url.split("/")[3].split("?")[0]}
           src={url}
           className="iframe"
         ></iframe>
