@@ -33,7 +33,7 @@ const Acortador = ({ exit }) => {
     function isUrl(str) {
         // str is the url
         let pattern = new RegExp(
-            "^(https?:\\/\\/)"
+            "^(https?:\\/\\/)?[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?",
         ); // fragment locator
         return pattern.test(str);
     }
@@ -45,7 +45,7 @@ const Acortador = ({ exit }) => {
         let $ = (name)=>document.getElementsByName(name)[0];
         if (!isUrl(obj.url)) {
             $("url").style=`
-                border: 2px solid var(--color-1);
+                border: 2px solid #f00;
             `;
         }else{
             $("url").style=`
@@ -55,7 +55,7 @@ const Acortador = ({ exit }) => {
 
         if (!isEmail(obj.paypal)) {
             $("paypal").style=`
-                border: 2px solid var(--color-1);
+                border: 2px solid #f00;
             `;
         }else{
             $("paypal").style=`
