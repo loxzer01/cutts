@@ -8,14 +8,14 @@ body {
   color: var(--black);
 }
 :root{
-  --color-1: #FF5B51;
-  --color-1-1: #ffafaa;
-  --color-2: #51bfff;
+  --color-1: #5171ff;
+  --color-1-1: #aaccff;
+  --color-2: #006dfc;
   --color-2-1: #b0def8;
   --color-3: #ffae43;
-  --color-4: #e3edff;
+  --color-4: #dae9ff;
   --black: #141414;
-  --white: #f3f3f3;
+  --white: #ffffff;
 }
 
 a {

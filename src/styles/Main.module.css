@@ -22,6 +22,7 @@
     padding: 1rem 2rem;
     border-radius: 12px;
     transition: 200ms;
+    color: var(--color-1);
 }
 .main button:hover {
     background-color: var(--color-1);
@@ -30,7 +31,7 @@
 .main h1{
     font-size: 42px;
     font-weight: bold;
-    color: var(--color-1);
+    color: var(--color-2);
 }
 .main p,
 .section p {
@@ -39,14 +40,18 @@
     color: var(--black);
     margin-bottom: 30px;
 }
+
 .section h2{
     font-size: 32px;
     font-weight: bold;
-    color: var(--color-1);
+    color: var(--color-2);
 }
 .section p{
     color: var(--white);
     font-size: 18px;
+}
+.main span{
+    color: #000;
 }
 .section a{
     color: var(--color-1);
