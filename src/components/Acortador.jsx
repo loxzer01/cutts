@@ -33,7 +33,7 @@ const Acortador = ({ exit }) => {
     function isUrl(str) {
         // str is the url
         let pattern = new RegExp(
-            "^(https?:\\/\\/)?[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?",
+            "^(https?:\\/\\/)[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,8}(:[0-9]{1,8})?(\\/.*)?",
         ); // fragment locator
         return pattern.test(str);
     }
