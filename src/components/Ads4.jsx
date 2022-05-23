@@ -1,25 +1,26 @@
 import adsJson from '../../public/ads.json';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 export default function Ads4(){
-    const [active, setActive] = useState(false);
-    const [active2,setActive2] = useState(false);
+    const [timer, setTimer] = useState(10);
     const [adsIframe, setAdsIframe] = useState(adsJson[0]);
     const generateRandom = () => {
         const random = Math.floor(Math.random() * adsJson.length);
         setAdsIframe(adsJson[random]);
     }
-    useEffect(()=>{
-        generateRandom();
-    },[])
     return(
         <>
             {
-                active?active2?<></> :<iframe src={adsIframe} sandbox="allow-scripts allow-same-origin allow-forms" onLoad={()=>{
-                    setTimeout(()=>setActive2(true),500);
-                }}/>:<iframe src={adsIframe} sandbox="allow-scripts allow-same-origin allow-forms" onLoad={()=>{
-                    generateRandom();
-                    setTimeout(()=>setActive(true),500);
-                }}/>
+                timer>0?<iframe src={adsIframe} sandbox="allow-scripts allow-same-origin allow-forms" onLoad={
+                    ()=>{
+                        generateRandom();
+                        setTimer(timer-1);
+                    }
+                } onAbort={
+                    ()=>{
+                        generateRandom();
+                        setTimer(timer-1);
+                    }
+                }/>:<></>
             }
             <style jsx>{`
                 iframe{

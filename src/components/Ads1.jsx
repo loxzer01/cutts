@@ -35,7 +35,6 @@ export default function Ads2({url}) {
           top: 0;
           left: 110%;
         }
-        }
       `}</style>
     </>
   );
