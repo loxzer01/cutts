@@ -26,14 +26,14 @@ const Main = () =>{
                     <p>
                         Puedes analizar tu link y ver el estado de tu acortador.
                     </p>
-                    <a href="/analitys">analizar</a>
+                    <button className={main.href} onClick={()=>window.location.href="/analitys"}>analizar</button>
                 </div>
                 <Image src="/search.png" alt="analitys" width={445} height={445} className="img"/>
             </section>
             <section className={main.howWorks}>
                 <h2>¿Como funciona?</h2>
                 <ul>
-                    <li>Cutts.ga Tiene como objetivo ser muy simple: <span>¡crea y gana sin registrarse!</span></li>
+                    <li>Cutts.ga Tiene como objetivo ser muy simple: <span>¡crear y ganar sin registrarse!</span></li>
                     <li>Tu puedes crear un acotador para tus links y generar ingresos activos</li>
                     <li>Tienes solo un panel de registro; <span>1-) La url:</span> esta url es la que pretende acortar. 
                         <span> 2-) La cantidad:</span> alli debe aplicar la cantidad a retirar, al llegar la cantidad se

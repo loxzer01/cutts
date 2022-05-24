@@ -6,10 +6,18 @@
     justify-content: space-around;
     align-items: center;
 }
-.button {
+.header div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+.button,.href {
+    text-decoration: none;
     outline: none;
-    border: 2px solid var(--color-1);
-    padding: 1rem 2rem;
+    border: 2px solid #141414;
+    padding: 0.50rem 2rem;
     border-radius: 20px;
     background-color: transparent;
     cursor: pointer;
@@ -19,6 +27,12 @@
 }
 .button:hover {
     background-color: var(--color-1);
-    color: var(--white);
+}
+.href {
+    border: none;
+}
+.href:hover {
+    background-color: transparent;
+    color: var(--color-1);
 }
 

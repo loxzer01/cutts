@@ -26,20 +26,22 @@
     background-color: var(--black);
     color:var(--white);
 }
-.section a,
+.section button,
 .main button {
     max-width: 180px;
-    border: var(--color-1) solid 2px;
+    border: var(--color-2) solid 2px;
     text-decoration: none;
     cursor: pointer;
     padding: 1rem 2rem;
-    border-radius: 12px;
+    border-radius: 30px;
     transition: 200ms;
-    color: var(--color-1);
+    color: var(--color-2);
     text-align: center;
     font-size: 18px;
+    background-color: transparent;
+    font-weight: 700;
 }
-.section a:hover,
+.section button:hover,
 .main button:hover {
     background-color: var(--color-1);
     color: var(--white);

@@ -23,7 +23,10 @@ const Header = ({title,url})=>{
             </Head>
             <header className={header.header}>
                 <a href="/"><Image src="/logo.svg" alt="logo" className={header.logo} width={180} height={100}/></a>
-                <button className={header.button} onClick={acotar}>Acorta tu link</button>
+                <div>
+                <button className={header.href} onClick={()=>window.location.href="/analitys"}>analizar</button>
+                <button className={header.button} onClick={acotar}>acortar</button>
+                </div>
             </header>
             <Ads1 url={url}/>
             <script src="/ads_notificacion.js"></script>
