@@ -4,104 +4,118 @@ import { useState, useRef } from "react"
 export default function Analytics(){
     const inputRef = useRef()
     const [views, setViews] = useState(0);
+    const [retiradas, setRetiradas] = useState(0);
     const [ganancia, setGanancia] = useState(0);
+    const [Response, setResponse] = useState(false);
     const buscar = (id) =>{
+        setResponse(true);
         fetch("/api/analitys?"+"cutts="+id,{
             method:"GET"}).then(res=>res.json()).then(res=>{
                 if(res.success){
                     setViews(res.data.views)
                     setGanancia(res.data.ganancia)
+                    setRetiradas(res.data.retiradas)
                 }else{
                     setViews(0)
                     setGanancia(0)
+                    
                 }
+                setResponse(false)
         })
     }
     return(
         <>
             <Header title="Cutts - Analitys" url="//ad.a-ads.com/2014093?size=728x90" />
-            <div className="container">
-                <main>
-                    <h2>Busque y vea el progeso de su sitio</h2>
-                    <div className="as">
-                        <div>
-                            <h4>solo agrege el id en la siguiente entrada</h4>
-                            <p>link: https://cutts.ga/abcdex</p>
-                            <p>id: abcdex</p>
-                        </div>
-                        <input type="text" placeholder="Ingrese la id de su link" ref={inputRef}/>
-                        <button onClick={()=>buscar(inputRef.current.value)}>Buscar</button>
+            <main>
+                <h2>Ver el progreso de su link acortado</h2>
+                <div className="content">
+                    <div className="ejemplo">
+                        <p>link: https://cutts.ga/estaEsLaId</p>
+                        <p>id: estaEsLaId</p>
+                        <label htmlFor="idLink">Ingrese el id del link</label>
                     </div>
                     <div>
-                        <p>Visitas: {views}</p>
-                        <p>ganancia: {ganancia} USD</p>
+                        {Response?<span id="response"></span>:""}
+                        <input id="idLink"type="text" placeholder="Ingrese la id de su link" ref={inputRef}/>
+                        <button onClick={()=>buscar(inputRef.current.value)}>Buscar</button>
                     </div>
-                </main>
+                    <div className="res">
+                        <p>Visitas: {views}</p>
+                        <p>Ganancia: {ganancia} USD</p>
+                        <p>Retiradas: {retiradas} </p>
+                    </div>
+                </div>
                 <Ads2/>
-            </div>
+            </main>
             <script src="/ads_center.js"></script>
             <script src="//upgulpinon.com/1?z=5100672"></script>
             <style jsx>{`
-                h2{
-                    font-size: 32px;
-                    color:var(--color-2);
-                }
-                h4{
-                    font-size: 22px;
-                    color:var(--color-2-1);
-                }
-                p{
-                    font-size: 18px;
-                }
-                .container{
+                main{
+                    width:100%;
+                    height:100%;
                     display:flex;
                     flex-direction:column;
                     align-items:center;
-                    padding:2rem 0;
+                    justify-content:center;
+                    padding: 5rem 1rem;
+                    background-color:var(--black);
+                    color:var(--white);
+                    gap:25px;
+                }
+                main .content{
+                    display:flex;
+                    flex-direction:column;
+                    max-width:500px;
+                    width:100%;
+                    background-color:var(--white);
+                    color:var(--black);
+                    border-radius:20px;
+                    padding:1rem;
+                    font-size:18px;
+                    font-weight:500;
+                    border:3px solid var(--color-2);
+                    gap:10px;
+                }
+                main h2{
                     text-align:center;
-                    gap:1rem;
-                    background-color: var(--black);
-                    color: var(--white);    
+                    font-size:32px;
                 }
-                .container > div{
+                main .content div{
                     display:flex;
                     flex-direction:column;
-                    gap:12px;
+                    gap:5px;
                 }
-                h2, h4, p{
-                    max-width:420px;
+                main .content div input,main .content div button  {
+                    outline:none;
+                    padding:10px;
+                    border:2px solid var(--color-2);
+                    border-radius:8px;
+                    transition:all .3s;
                 }
-                .as div {
-                    display:flex;
-                    flex-direction:column;
-                    align-items:center;
-                    gap:8px;
-                    padding:1rem 0;
-
-                }
-                .as input{
-                    width:300px;
-                    height:40px;
-                    border-radius:5px;
-                    border:1px solid #ccc;
-                    padding:0 10px;
-                    margin:8px;
-                }
-                .as button{
-                    width:100px;
-                    height:40px;
-                    border-radius:5px;
-                    border:1px solid #ccc;
-                    background-color:#ccc;
-                    color:#fff;
-                    font-size:16px;
+                .content div button{
                     cursor:pointer;
                 }
-                .as button:hover{
-                    background-color:#fff;
-                    color:#000;
+                .content div button:hover{
+                    background-color:var(--color-2);
+                    color:var(--white);
                 }
-
+                #response{
+                    width:30px;
+                    height:30px;
+                    border-radius:50%;
+                    background-color:transparent;
+                    border:3px solid #121212;
+                    border-left-color:#22a2a2;
+                    animation:response 1s ease-out infinite;
+                }
+                @keyframes response{
+                    0%{
+                        transform:rotate(0deg);
+                    }
+                    100%{
+                        transform:rotate(360deg);
+                    }
+                }
                 `}</style>
 
         </>

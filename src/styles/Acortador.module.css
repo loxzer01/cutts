@@ -28,7 +28,7 @@
     background-color: var(--color-1-1);
     border-radius: 20px;
 }
-.acotar_contenedor span {
+.acotar_contenedor > span {
     font-weight: bold;
     color: #141414;
     cursor: pointer;
@@ -80,15 +80,21 @@
 
     width: 100%;
     height: 100%;
-    gap: 2rem;
+    gap: 12px;
 }
-.ready span {
+.ready .span {
     position: relative;
     right: 0;
     top: 0;
-    padding: 1rem 2rem;
-    background: var(--color-2-1);
+    padding: 0.80rem 2rem;
+    width: 160px;
+    text-align: center;
+    background: var(--color-3);
     border-radius: 12px;
+    border: #141414 2px solid;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
 }
 /* invisible  */
 .ready input{
@@ -113,4 +119,23 @@
     border-radius: 20px;
     font-size: 18px;
     font-weight: 700;
+}
+.response{
+    position: relative;
+    right: 0;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background-color:transparent;
+    border:3px solid #121212;
+    border-left-color:#22a2a2;
+    animation:response 1s ease-out infinite;
+}
+@keyframes response{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
 }

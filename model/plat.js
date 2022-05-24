@@ -20,7 +20,11 @@ const platSchema = new Schema({
     views: {
         type: Number,
         required: true,
-    }
+    },
+    withdraw: {
+        type: Number,
+        required: true,
+    },
 })
 
 export default models.plats || model(`plats`, platSchema);

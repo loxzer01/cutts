@@ -4,25 +4,32 @@ const Acortador = ({ exit }) => {
     const [isSend, setIsSend] = useState(false);
     const [Url, setUrl] = useState("");
     const [peticion, setPeticion] = useState(false);
+    const [Response, setResponse] = useState(false);
     const form = useRef();
     const input = useRef();
     function submit(e) {
         let obj = data();
         e.preventDefault();
         if (isUrl(obj.url) && isEmail(obj.paypal)) {
+            setResponse(true);
             let objSend = {
                 ...obj,
                 cutts: Math.random().toString(36).substr(2, 10),
             }
-            objSend.amount = objSend.amount<10?10:objSend.amount;
+            objSend.amount = objSend.amount<15?15:objSend.amount;
             fetch("/api/plat", {method: "POST", body: JSON.stringify(objSend)}).then(res => res = res.json()).then(res => {
                 setIsSend(res.success);
                 setUrl(res.data);
                 setPeticion(!res.success);
-                console.log(data);
+                setResponse(false);
             });
         }
-        
+    }
+    function otra (){
+        setIsSend(false);
+        setUrl("");
+        setPeticion(false);
+        setResponse(false);
     }
     function data(){
         return Object.fromEntries(new FormData(form.current))
@@ -83,7 +90,8 @@ const Acortador = ({ exit }) => {
                 <a href={ window.location.origin +"/"+ Url} id="linkUrl" onClick={copy}>
                 { window.location.origin +"/"+ Url}
                 </a>
-                <span onClick={copy}>Copiar</span>
+                <span className={acortador.span} onClick={copy}>Copiar</span>
+                <span className={acortador.span} onClick={otra}>Otra</span>
             </div>
             ) : (
             <>
@@ -119,6 +127,9 @@ const Acortador = ({ exit }) => {
                     placeholder="Ingresa tu cuenta de paypal"
                     required
                 />
+                {
+                    Response?<span className={acortador.response}></span>:""
+                }
                 <button onClick={()=>isValid(data())}>Crear</button>
                 </form>
             </>
