@@ -105,13 +105,13 @@ const Acortador = ({ exit }) => {
                     placeholder="http://ejemplo.com"
                     required
                 />
-                <label htmlFor="amount">La Cantidad ( min: 10 )</label>
+                <label htmlFor="amount">La Cantidad ( min: 15 )</label>
                 <input
                     type="number"
                     id="amount"
                     name="amount"
                     placeholder="Ingresa la cantidad a retirar en USD"
-                    min="10"
+                    min="15"
                     onChange={(e) => {
                         if (!isNumber(e.target.value)) {
                             e.target.value = e.target.value.slice(0, -1);
