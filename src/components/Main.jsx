@@ -15,7 +15,7 @@ const Main = () =>{
             <main className={main.main}>
                 <div>
                     <h1>Cutts<span>.ga</span></h1>
-                    <p>Un sistema de acortador de link con capacidades de generar 50USD con tan solo 10K visitas</p>
+                    <p>Un sistema de acortador de link con capacidades de generar 30USD con tan solo 10K visitas</p>
                     <button onClick={acotar}>acortar</button>
                 </div>
                 <Image src="/coins.png" alt="analitys" width={445} height={473} className="img"/>

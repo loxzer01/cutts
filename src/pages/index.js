@@ -6,6 +6,7 @@ export default function Home() {
     <>
       <Header title="Cutts - Home" url="//ad.a-ads.com/2014484?size=728x90"/>
       <Main />
+      <script src="https://www.google-analytics.com/analytics.js"></script>
     </>
   );
 }

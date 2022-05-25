@@ -31,7 +31,7 @@ export default function Analytics(){
                 <div className="content">
                     <div className="ejemplo">
                         <p>link: https://cutts.ga/estaEsLaId</p>
-                        <p>id: estaEsLaId</p>
+                        <p>Id: estaEsLaId</p>
                         <label htmlFor="idLink">Ingrese el id del link</label>
                     </div>
                     <div>

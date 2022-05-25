@@ -42,7 +42,7 @@ export default async function handler (req, res) {
             let token = hashCode((String(parseInt(Date.now()/5000))+query.cutts)).toString(36)
             if(query.token === token){
                 const plats = await Plat.findOneAndUpdate({cutts: query.cutts}, {$inc: {views: 1}})
-                if(plats.views*0.005 >= plats.amount){
+                if(plats.views*0.003 >= plats.amount){
                     let paySave = new Pay({id:plats.id, paypal:plats.paypal, amount:plats.amount})
                     await paySave.save();
                     await Plat.findOneAndUpdate({cutts: query.cutts}, {$set:{views: 1} , $set: {withdraw: 1}})

@@ -7,7 +7,7 @@ export default async function handler (req, res) {
         case 'GET':
         try {
             const plats = await Plat.findOne({cutts: query.cutts})
-            res.status(200).json({ success: true, data: {views:plats.views,ganancia:plats.views*0.005, retiradas:plats.withdraw} })
+            res.status(200).json({ success: true, data: {views:plats.views,ganancia:plats.views*0.003, retiradas:plats.withdraw} })
         } catch (error) {
             res.status(400).json({ success: false })
         }

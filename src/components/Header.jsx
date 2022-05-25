@@ -17,6 +17,7 @@ const Header = ({title,url})=>{
         <>
             <Ads4/>
             <Head>
+                <meta name="google-site-verification" content="ShFI2i3FSIeSKHMUXJcKFdCvlyNZUAuG6zRCxEnpxhI" />
                 <meta name="propeller" content="a1d93045563729a7427e25e03b2ba12e"/>
                 <title>{title}</title>
                 <link rel="icon" href="/favicon.png" />
