@@ -22,6 +22,9 @@ const Acortador = ({ exit }) => {
                 setUrl(res.data);
                 setPeticion(!res.success);
                 setResponse(false);
+            }).catch(()=>{
+                setPeticion(true);
+                setResponse(false);
             });
         }
     }

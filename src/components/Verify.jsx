@@ -16,7 +16,7 @@ export default function Verify({url}){
         }else{
             if(isDb){
                 let token = hashCode((String(parseInt(Date.now()/5000))+url)).toString(36);
-                fetch(`/api/plat?cutts=${url}&token=${token}}`,{method:"PUT"}).then(res=>res.json()).then(res=>{
+                fetch(`/api/plat?cutts=${url}&token=${token}`,{method:"PUT"}).then(res=>res.json()).then(res=>{
                     if(res.success){
                         window.location.href = res.data
                     }

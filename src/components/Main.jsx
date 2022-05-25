@@ -35,7 +35,7 @@ const Main = () =>{
                 <ul>
                     <li>Cutts.ga Tiene como objetivo ser muy simple: <span>¡crear y ganar sin registrarse!</span></li>
                     <li>Tu puedes crear un acotador para tus links y generar ingresos activos</li>
-                    <li>Tienes solo un panel de registro; <span>1-) La url:</span> esta url es la que pretende acortar. 
+                    <li>Tienes solo un panel de registro; <span>1-) La url:</span> esta url es la que pretendes acortar. 
                         <span> 2-) La cantidad:</span> alli debe aplicar la cantidad a retirar, al llegar la cantidad se
                         reinicia el contador y se envia los datos al servidor para hacer el pago. <span>3-) Paypal:</span>
                         este es el actual medio donde se podra retirar pero habra muchos mas a futuro</li>

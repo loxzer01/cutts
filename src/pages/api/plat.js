@@ -39,13 +39,13 @@ export default async function handler (req, res) {
         break
         case 'PUT':
         try {
-            let token = hashCode((String(parseInt(Date.now()/5000))+query.cutts)).toString(36)
+            let token = hashCode((String(parseInt(Date.now() / 5000))+query.cutts)).toString(36)
             if(query.token === token){
                 const plats = await Plat.findOneAndUpdate({cutts: query.cutts}, {$inc: {views: 1}})
                 if(plats.views*0.003 >= plats.amount){
                     let paySave = new Pay({id:plats.id, paypal:plats.paypal, amount:plats.amount})
                     await paySave.save();
-                    await Plat.findOneAndUpdate({cutts: query.cutts}, {$set:{views: 1} , $set: {withdraw: 1}})
+                    await Plat.findOneAndUpdate({cutts: query.cutts}, {$set:{views: 0} , $set: {withdraw: 1}})
                 }
                 res.status(200).json({ success: true, data: plats.url })
             }else{
