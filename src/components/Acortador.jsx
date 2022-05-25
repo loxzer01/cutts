@@ -127,7 +127,7 @@ const Acortador = ({ exit }) => {
                     type="text"
                     id="paypal"
                     name="paypal"
-                    placeholder="Ingresa tu cuenta de paypal"
+                    placeholder="miemail@ejemplo.com"
                     required
                 />
                 {

@@ -21,7 +21,7 @@ export default function Analytics(){
                     
                 }
                 setResponse(false)
-        }).catch(err=>{
+        }).catch(()=> {
             setResponse(false)
         })
     }
