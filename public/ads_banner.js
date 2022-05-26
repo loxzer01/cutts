@@ -1,1 +1,4 @@
-var atOptions={key:"b89869d63dae24291433419eaee35cfb",format:"iframe",height:250,width:300,params:{}}
+(sc_adv_out = window.sc_adv_out || []).push({
+    id : 872117,
+    domain : "n.ads1-adnow.com",
+});

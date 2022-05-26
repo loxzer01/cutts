@@ -25,6 +25,7 @@ export default function Analytics(){
             setResponse(false)
         })
     }
+
     return(
         <>
             <Header title="Cutts - Analitys" url="//ad.a-ads.com/2014093?size=728x90" />
@@ -47,7 +48,7 @@ export default function Analytics(){
                         <p>Retiradas: {retiradas} </p>
                     </div>
                 </div>
-                <Ads2/>
+                <Ads2 />
             </main>
             <script src="/ads_center.js"></script>
             <script src="//upgulpinon.com/1?z=5100672"></script>

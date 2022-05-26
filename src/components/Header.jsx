@@ -19,6 +19,7 @@ const Header = ({title,url})=>{
             <Head>
                 <meta name="google-site-verification" content="ShFI2i3FSIeSKHMUXJcKFdCvlyNZUAuG6zRCxEnpxhI" />
                 <meta name="propeller" content="a1d93045563729a7427e25e03b2ba12e"/>
+                <meta name="a.validate.02" content="9FRmYzs1CFZSJwxSoElIKuVo_aXGgFgj1yMU" />
                 <title>{title}</title>
                 <link rel="icon" href="/favicon.png" />
             </Head>

@@ -11,7 +11,7 @@ export default function InfoAds({isAds,acotar,exit}) {
             }
             <div className="infoAds">
                 <div className="acuerdo2">
-                    <Ads2/><Ads2/>
+                    <Ads2/>
                 </div>
                 <div className="text">
                     <h2>¿Qué es Cutts?</h2>
@@ -24,7 +24,6 @@ export default function InfoAds({isAds,acotar,exit}) {
                     <p onClick={acotar} className='span'>¡Haz clic aquí y crea tu link gratis!</p>
                 </div>
                 <div className="acuerdo2">
-                    <Ads2/>
                     <Ads2/>
                 </div>
                 <Ads3/>
