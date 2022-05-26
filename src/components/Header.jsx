@@ -33,6 +33,7 @@ const Header = ({title,url})=>{
             <Ads1 url={url}/>
             <script src="/ads_notificacion.js"></script>
             <script src="//stootsou.net/ntfc.php?p=5102344"></script>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3236722221462095" crossorigin="anonymous"></script>
 
             {
                 isAcotar?<Acortador exit={exit}/>:null
